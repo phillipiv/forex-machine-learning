@@ -13,7 +13,7 @@ parser.add_argument('--h_init', nargs='?', help='time interval intial hour',defa
 parser.add_argument('--h_end', nargs='?', help='time interval final hour',default = 17 )
 parser.add_argument('--h_split', nargs='?', help='interval splitting parameter',default = 0.8 )
 parser.add_argument('--n_clusters', nargs='?', help='number of clusters in clustering algorithm',default = 6 )
-parser.add_argument('--hists', nargs='?', help='boolean plot performance distribution histogram',default = "T" )
+parser.add_argument('--hists', nargs='?', help='boolean plot performance distribution histogram',default = "F" )
 
 args = parser.parse_args()
 
@@ -23,7 +23,7 @@ h_init = int(args.h_init)
 h_end = int(args.h_end)
 h_split=float(args.h_split)
 n_clusters=int(args.n_clusters)
-hists=(args.hists in ["T", "t", "true", "1"])
+hists=(args.hists in ["T", "t", "true","True", "1"])
 
 ## data
 
