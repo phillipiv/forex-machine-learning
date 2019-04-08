@@ -34,7 +34,7 @@ Is there a relation between each cluster composition and last part of that day (
 
 System pipeline is summarized in this image:
 
-![image](https://github.com/philipiv/forex-machine-learning/blob/master/imgs/pipeline.png)
+![image](https://github.com/philipiv/forex-machine-learning/blob/master/imgs/system-pipeline.png)
 
 Lets see this pipeline a little closer with some examples. The data showed in the following Figures belongs to EUR/USD asking price at close for January 4th, 2010. 
 
