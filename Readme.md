@@ -38,7 +38,7 @@ System pipeline is summarized in this image:
 
 Lets see this pipeline a little closer with some examples. The data showed in the following Figures belongs to EUR/USD asking price at close for January 4th, 2010. 
 
-At the beginning some parameters are seted. The backtesting period, the time interval to be considered, the number of clusters of kmeans algorithm, etc.
+At the beginning some parameters are seted. Backtesting period, time interval to be considered, number of clusters of kmeans algorithm, etc.
 
 The algorithm only considers an specific interval of each trading day, lets say the 9-17 hs interval.
 
