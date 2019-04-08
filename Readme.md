@@ -34,7 +34,7 @@ Is there a relation between each cluster composition and last part of that day (
 
 System pipeline is summarized in this image:
 
-![image](https://github.com/philipiv/rssi-filtering-kalman-grey-fourier-particles-bellavista2006/blob/master/sample_output.png)
+![image](https://github.com/philipiv/forex-machine-learning/blob/master/imgs/pipeline.png)
 
 Lets see this pipeline a little closer with some examples. The data showed in the following Figures belongs to EUR/USD asking price at close for January 4th, 2010. 
 
@@ -42,11 +42,11 @@ At the beginning some parameters are seted. The backtesting period, the time int
 
 The algorithm only considers an specific interval of each trading day, lets say the 9-17 hs interval.
 
-![image](https://github.com/philipiv/rssi-filtering-kalman-grey-fourier-particles-bellavista2006/blob/master/sample_output.png)
+![image](https://github.com/philipiv/forex-machine-learning/blob/master/imgs/all_day_prices_with_interval_selection.png)
 
 Each of these intervals are splitted into two subintervals, one (with larger lenght) is used to feed the clustering algorithm and the other one (shorter than the former) is used to calculate a label. For example: 9-15 hs is used for clustering and 15-17 hs for labelling.
 
-![image](https://github.com/philipiv/rssi-filtering-kalman-grey-fourier-particles-bellavista2006/blob/master/sample_output.png)
+![image](https://github.com/philipiv/forex-machine-learning/blob/master/imgs/train_label_split.png)
 
 All the larger intervals are used for training a kmeans algorithm. All day intervals from backtesting period are then grouped into _n_ different clusters.
 
