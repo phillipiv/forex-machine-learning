@@ -3,9 +3,7 @@ import argparse
 from util import *
 
 
-##################################################################################
-##### parse script parameters ####################################################
-##################################################################################
+# parse script parameters
 
 parser = argparse.ArgumentParser(description='Unsupervised learning approach to Forex trading analysis')
 parser.add_argument('--date_init', nargs='?', help='backtesting initial date', default='2010-01-01')
