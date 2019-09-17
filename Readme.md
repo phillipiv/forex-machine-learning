@@ -20,15 +20,13 @@ First step is to create one and install all necessary project requirements.
     
 ## System description
 
-### Idea
+### 
 
-The basic idea is to search for different 'types of days' in a backtesting trading period, and relate this 'type' with the behaviour of last part of that trading day. 
+All trading data is split into days and each day is then further split into a given time interval. 
 
-All trading data is first splitted into days, and to allow flexibility each day is further split into a given time interval.
+A clustering algorithm is executed and all of these days (time intervals) are grouped based on their similarity.
 
-A clustering algorithm is executed and all of these days (intervals) are grouped based on their similarity.
-
-Is there a relation between each cluster composition and last part of that day (interval) behaviour?
+Then, a detailed study is made on each cluster composition to assess its profitability. 
 
 ## Pipeline
 
@@ -38,21 +36,26 @@ System pipeline is summarized in this image:
 
 Lets see this pipeline a little closer with some examples. The data showed in the following Figures belongs to EUR/USD asking price at close for January 4th, 2010. 
 
-At the beginning some parameters are seted. Backtesting period, time interval to be considered, number of clusters of kmeans algorithm, etc.
+Some parameters are set when starting the program; backtesting period, time interval to be considered, number of clusters of kmeans algorithm, etc.
 
-The algorithm only considers an specific interval of each trading day, lets say the 9-17 hs interval.
+The system only considers an specific interval of each trading day, in the following example we are only considering the 9-17 hs interval.
 
 ![image](https://github.com/philipiv/forex-machine-learning/blob/master/imgs/all_day_prices_with_interval_selection.png)
 
-Each of these intervals are splitted into two subintervals, one (with larger lenght) is used to feed the clustering algorithm and the other one (shorter than the former) is used to calculate a label. For example: 9-15 hs is used for clustering and 15-17 hs for labelling.
+Each of these intervals are further split into two subintervals. The first one (usually with larger length) is used to feed the clustering algorithm and the other one is used to calculate a label. For example: 9-15 hs is used for clustering and 15-17 hs for labelling.
 
 ![image](https://github.com/philipiv/forex-machine-learning/blob/master/imgs/train_label_split.png)
 
-All the larger intervals are used for training a kmeans algorithm. All day intervals from backtesting period are then grouped into _n_ different clusters.
+A kmeans clustering algorithm is fitted using the time series from first group, all sequences are then grouped into _n_ different clusters.
 
-The label is calculated as the substraction between the subinterval's last and first element. This way we answer the question: what would happen if I would buy at the beginning of that time subinterval and I would sell at the end of it?
+Each of these sequences is labelled as the difference between the first and the last element of its 'labelling subinterval'. 
 
-At last, a measure of 'performance' is calculated for each cluster. Performance is calculated as the sum of all labels of intervals belonging to that particular cluster.
+    labels = []
+    for subinterval in labelling_subintervals:
+
+        labels.append(subinterval[-1]-subinterval[0]) 
+
+At last, a measure of 'performance' is calculated for each cluster. Performance is calculated as the sum of all labels of sequences belonging to that particular cluster.
 
 
 
