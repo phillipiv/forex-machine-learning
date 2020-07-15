@@ -57,6 +57,9 @@ Each of these sequences is labelled as the difference between the first and the 
 
 At last, a measure of 'performance' is calculated for each cluster. Performance is calculated as the sum of all labels of sequences belonging to that particular cluster.
 
+## Data
+
+Some example data can be downloaded [here](https://drive.google.com/drive/folders/1SlIbz-_tprP_ZlnDk_y8SGdDK2Tgynuy?usp=sharing).
 
 
 ## Execution
