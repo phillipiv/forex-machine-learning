@@ -14,7 +14,7 @@ Implementation of an unsupervised learning algorithm to analyse forex signals an
 It is strongly advised you work in a virtual environment.\
 First step is to create one and install all necessary project requirements.
        
-    ~/forex-machine-learning $ virtualenv env --python=python3
+    ~/forex-machine-learning $ virtualenv env --python=python3.6
     ~/forex-machine-learning $ source env/bin/activate
     ~/forex-machine-learning $ pip install -r requirements.txt
     
