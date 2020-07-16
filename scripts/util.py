@@ -1,12 +1,17 @@
+import os
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
 
-def load_all_data():
+DATA_DIR = os.path.join('..', 'data')
+
+
+def load_data(path):
     """Loads the data!"""
-    return pd.read_pickle('../data/EURUSD-2010_2018-closeAsk.pkl')
+    return pd.read_pickle(path)
 
 
 def split_intervals(data_intervals, h_split):
