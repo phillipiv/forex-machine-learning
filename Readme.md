@@ -2,6 +2,8 @@
 
 Implementation of an unsupervised learning algorithm to analyse forex signals and support trading strategies. 
 
+This is a work in progress, I am going to resume this project soon.
+
 ## Getting Started
 
 ### Clone repository
@@ -56,10 +58,6 @@ Each of these sequences is labelled as the difference between the first and the 
         labels.append(subinterval[-1]-subinterval[0]) 
 
 At last, a measure of 'performance' is calculated for each cluster. Performance is calculated as the sum of all labels of sequences belonging to that particular cluster.
-
-## Data
-
-Some example data can be downloaded [here](https://drive.google.com/drive/folders/1SlIbz-_tprP_ZlnDk_y8SGdDK2Tgynuy?usp=sharing).
 
 
 ## Execution
